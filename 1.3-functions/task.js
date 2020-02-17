@@ -1,3 +1,4 @@
+// 1 задача
 function getSolutions( a, b, c ) {
 	let D = Math.pow(b, 2) - 4 * a * c;
 	
