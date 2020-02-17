@@ -15,11 +15,32 @@ function getResult(a,b,c){
 }
 
 function getAverageMark(marks){
-    // код для задачи №2 писать здесь
-    // return averageMark;
+	let marksOptimal = marks;
+	let sum = 0;
+	if (marks.length > 5) {
+		console.log("Превышено допустимое количество оценок");
+		marksOptimal = marks.slice(0, 5);
+	}
+	
+	for (let i = 0; i < marksOptimal.length; i++ ) {
+		sum = sum + marksOptimal[i];
+	}
+	
+	let averageMark = sum /marksOptimal.length;
+	return averageMark;
 }
 
+
 function askDrink(name,dateOfBirthday){
-    // код для задачи №3 писать здесь
-    // return result;
+	let yearOfBirthday = dateOfBirthday.getFullYear();
+	let dateNow = new Date();
+	let yearNow = dateNow.getFullYear();
+	let result;
+
+	if (yearNow - yearOfBirthday > 18) {
+		result = `Не желаете ли олд-фэшн, ${name}`;
+	} else { 
+		result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
+	}
+	return result;
 }
